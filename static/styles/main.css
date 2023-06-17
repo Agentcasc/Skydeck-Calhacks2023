@@ -1,0 +1,20 @@
+body {
+    background-color: #000000;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+
+    width: 90vw;
+    height: 90vh;
+    padding: 4rem;
+
+}
+
