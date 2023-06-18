@@ -20,16 +20,54 @@
     <input type="submit" value="Get Career Path Suggestion">
 
 </form>
+{% if career1 %}
+<div class="careerchoice" name="career1">
+    {{ career1 }}
+    <button class="add-to-cart">
+        Select Career Path
+    </button>
+</div>
 
-{{ career1 }}
 <br>
-{{ career2 }}
+
+<div class="careerchoice" name="career2">
+    {{ career2 }}
+    <button class="add-to-cart">
+        Select Career Path
+    </button>
+</div>
+
 <br>
-{{ career3 }}
+
+<div class="careerchoice" name="career3">
+    {{ career3 }}
+    <button class="add-to-cart">
+        Select Career Path
+    </button>
+</div>
+
 <br>
-{{ career4 }}
+
+<div class="careerchoice" name="career4">
+    {{ career4 }}
+    <button class="add-to-cart">
+        Select Career Path
+    </button>
+</div>
+
 <br>
-{{ career5 }}
+
+<div class="careerchoice" name="career5">
+    {{ career5 }}
+    <button class="add-to-cart">
+        Select Career Path
+    </button>
+</div>
+
+
+
+
+{% endif %}
 
 
 
