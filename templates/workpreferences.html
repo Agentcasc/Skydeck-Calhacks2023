@@ -1,0 +1,160 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<h1>User Profile</h1>
+<form method="post" action="{% url 'save-profile-data' %}">
+    {% csrf_token %}
+
+    <div class="user-info">
+        <label for="extracurriculars">Extracurriculars:</label>
+        <textarea id="extracurriculars" name="extracurriculars"></textarea>
+        <br>
+        <label for="introverted_extroverted">Introverted/Extroverted:</label>
+        <input type="text" id="introverted_extroverted" name="introverted_extroverted">
+        <br>
+        <label for="interests">Interests:</label>
+        <textarea id="interests" name="interests"></textarea>
+        <br>
+        <label for="who_you_are">Who You Are and What You Do:</label>
+        <textarea id="who_you_are" name="who_you_are"></textarea>
+        <br>
+        <label for="county_in_california">County in California:</label>
+        <input type="text" id="county_in_california" name="county_in_california">
+        <br>
+        <label for="future_career_aspirations">Future Career Aspirations:</label>
+        <textarea id="future_career_aspirations" name="future_career_aspirations"></textarea>
+        <br>
+    </div>
+
+
+    <div class="user-info">
+        <label for="work_indoors">Prefer to work indoors?</label>
+        <select id="work_indoors" name="work_indoors">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="work_outdoors">Prefer to work outdoors?</label>
+        <select id="work_outdoors" name="work_outdoors">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="fast_paced_environment">Prefer a fast-paced environment?</label>
+        <select id="fast_paced_environment" name="fast_paced_environment">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="relaxed_environment">Prefer a relaxed environment?</label>
+        <select id="relaxed_environment" name="relaxed_environment">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="collaborative_team">Prefer to work in a collaborative team?</label>
+        <select id="collaborative_team" name="collaborative_team">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="independent_work">Prefer to work independently?</label>
+        <select id="independent_work" name="independent_work">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="physically_demanding_work">Prefer physically demanding work?</label>
+        <select id="physically_demanding_work" name="physically_demanding_work">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="willing_to_travel">Willing to travel for work?</label>
+        <select id="willing_to_travel" name="willing_to_travel">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="flexible_work_hours">Prefer flexible work hours?</label>
+        <select id="flexible_work_hours" name="flexible_work_hours">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="structured_environment">Prefer a structured environment?</label>
+        <select id="structured_environment" name="structured_environment">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="casual_environment">Prefer a casual environment?</label>
+        <select id="casual_environment" name="casual_environment">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="competitive_atmosphere">Prefer a competitive atmosphere?</label>
+        <select id="competitive_atmosphere" name="competitive_atmosphere">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="supportive_atmosphere">Prefer a supportive atmosphere?</label>
+        <select id="supportive_atmosphere" name="supportive_atmosphere">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="job_variety">Prefer job variety?</label>
+        <select id="job_variety" name="job_variety">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="routine_oriented">Prefer routine-oriented work?</label>
+        <select id="routine_oriented" name="routine_oriented">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="customer_interaction">Prefer customer interaction?</label>
+        <select id="customer_interaction" name="customer_interaction">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="work_life_balance">Value work-life balance?</label>
+        <select id="work_life_balance" name="work_life_balance">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="comfortable_with_technology">Comfortable with technology?</label>
+        <select id="comfortable_with_technology" name="comfortable_with_technology">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="open_to_learning">Open to learning new skills?</label>
+        <select id="open_to_learning" name="open_to_learning">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+
+    </div>
+
+
+    <input type="submit" value="Save Profile">
+</form>
+
+<script>
+
+
+</script>
+
+{% endblock %}

@@ -50,3 +50,11 @@ def profile(request):
             'userExtracurriculars': False,
         }
     return render(request, 'profile.html', context)
+
+
+def workpreferences(request):
+    return render(request, 'workpreferences.html')
+
+
+def development_planning(request):
+    return render(request, 'development_planning.html')

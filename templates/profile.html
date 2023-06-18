@@ -14,34 +14,26 @@
 
     <h3> Inputs </h3>
     <p> Extracurriculars: {{ userExtracurriculars }} </p>
+    <p> Introverted/Extroverted: {{ userIntrovertedExtroverted }} </p>
+    <p> Interests: {{ userInterests }} </p>
+    <p> Who You Are and What You Do: {{ userWhoYouAre }} </p>
+    <p> County in California: {{ userCountyInCalifornia }} </p>
+    <p> Future Career Aspirations: {{ userFutureCareerAspirations }} </p>
+
+
+    <a class="submit-info" href="/workpreferences">
+        Submit User Information
+    </a>
+
 
 
 
 {% else %}
 
-<h1>User Profile</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="extracurriculars">Extracurriculars:</label>
-        <textarea id="extracurriculars" name="extracurriculars"></textarea>
-        <br>
-        <label for="introverted_extroverted">Introverted/Extroverted:</label>
-        <input type="text" id="introverted_extroverted" name="introverted_extroverted">
-        <br>
-        <label for="interests">Interests:</label>
-        <textarea id="interests" name="interests"></textarea>
-        <br>
-        <label for="who_you_are">Who You Are and What You Do:</label>
-        <textarea id="who_you_are" name="who_you_are"></textarea>
-        <br>
-        <label for="county_in_california">County in California:</label>
-        <input type="text" id="county_in_california" name="county_in_california">
-        <br>
-        <label for="future_career_aspirations">Future Career Aspirations:</label>
-        <textarea id="future_career_aspirations" name="future_career_aspirations"></textarea>
-        <br>
-        <input type="submit" value="Save Profile">
-    </form>
+    <a class="submit-info" href="/workpreferences">
+        Submit User Information
+    </a>
+
 {% endif %}
 </body>
 {% endblock %}
