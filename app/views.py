@@ -81,3 +81,7 @@ def development_planning(request):
             "chosenField": ""
         }
     return render(request, 'development_planning.html',context)
+
+
+def CeresOne(request):
+    return render(request, 'CeresOne.html')
