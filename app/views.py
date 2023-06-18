@@ -57,4 +57,11 @@ def workpreferences(request):
 
 
 def development_planning(request):
+    context = {
+        "career1": "",
+        "career2": "",
+        "career3": "",
+        "career4": "",
+        "career5": "",
+    }
     return render(request, 'development_planning.html')

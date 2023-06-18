@@ -13,6 +13,26 @@
 <body>
 <h1>Launchpad</h1>
 
+<form method="POST" action="{% url 'career_path_suggestion' %}">
+
+
+    {% csrf_token %}
+    <input type="submit" value="Get Career Path Suggestion">
+
+</form>
+
+{{ career1 }}
+<br>
+{{ career2 }}
+<br>
+{{ career3 }}
+<br>
+{{ career4 }}
+<br>
+{{ career5 }}
+
+
+
 </body>
 </html>
 {% endblock %}
