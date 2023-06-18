@@ -1,4 +1,90 @@
 {% extends 'main.html' %}
 {% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/CeresOne.css' %}">
+</head>
 
-git
+<h2> Ceres 1 </h2>
+
+<div class="divider">
+    <hr>
+</div>
+
+<div class="row">
+    <div class="column">
+        <label for="input-box">Input:</label>
+        <textarea id="input-box" rows="10" cols="50"></textarea>
+    </div>
+
+    <div class="column">
+        <label for="output-box">Output:</label>
+        <div id="output-box">
+
+        </div>
+    </div>
+</div>
+
+<button class='submit-essay'>
+    Check Essay
+</button>
+
+<div class="summary-box">
+    <label for="summary">Summary:</label>
+    <textarea id="summary" rows="5" cols="100"></textarea>
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+    // Set up CSRF token for AJAX requests
+    $.ajaxSetup({
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        }
+    });
+
+    // When the submit-essay class is clicked
+    $('.submit-essay').click(function() {
+        // Get the essay content from the input box
+        var essayContent = $('#input-box').val();
+
+        // Make an AJAX request to upload the essay content
+        $.ajax({
+            url: '/essayResponse/',
+            type: 'POST',
+            data: {essay: essayContent},
+            dataType: 'json', // Set the expected response data type
+
+            success: function(response) {
+                console.log(response); // Debug output
+                // Clear the output box
+                $('#output-box').empty();
+
+                // Iterate over each sentence in the response
+                response.forEach(function(sentenceResponse) {
+                    var sentence = sentenceResponse.sentence;
+                    var label = sentenceResponse.label;
+
+                    // Create a new element with a unique identifier or class
+                    var sentenceElement = $('<p>').text(sentence);
+                    sentenceElement.addClass(label); // Add the label as a class
+
+                    // Append the sentence element to the output box
+                    $('#output-box').append(sentenceElement);
+                });
+            },
+
+            error: function(xhr, status, error) {
+                // Handle error if the request fails
+                console.log(error);
+            }
+        });
+    });
+});
+
+</script>
+
+
+{% endblock %}

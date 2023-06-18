@@ -88,11 +88,8 @@
   <div class="cardcontent">
     <p class="heading"> Ceres One Essay Assist
     </p><p class="para">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-      laboriosam at voluptas minus culpa deserunt delectus sapiente
-      inventore pariatur
     </p>
-    <button class="btn">Use</button>
+    <button class="c1btn">Use</button>
   </div>
 </div>
 </div>
@@ -102,6 +99,13 @@
 </body>
 
 <script>
+    $(document).ready(function(){
+        $(".c1btn").click(function(){
+            //redirect to /CeresOne
+            window.location.href = "/CeresOne";
+        });
+    });
+
     $(document).ready(function() {
     // Add to cart button click
     $(".add-to-cart").click(function() {
