@@ -4,6 +4,7 @@ from . import views
 from .CRUD import update
 from .Engine.Launchpad.CareerPath import response, addCareerPath
 from .Engine.CeresOne.responseGeneration import essayResponse
+from .Engine.CeresOne.determinant import GET_SENTENCE_RECOMMENDATION
 
 
 urlpatterns = [
@@ -19,4 +20,5 @@ urlpatterns = [
     path('addCareerPath/', addCareerPath, name='addCareerPath'),
     path('CeresOne/', views.CeresOne, name='CeresOne'),
     path('essayResponse/', essayResponse, name='essayResponse'),
+    path('GET_SENTENCE_RECOMMENDATION/', GET_SENTENCE_RECOMMENDATION, name='GET_SENTENCE_RECOMMENDATION'),
 ]

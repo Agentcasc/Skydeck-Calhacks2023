@@ -4,6 +4,25 @@
 
 }
 
+.output-box p:hover {
+    cursor: pointer;
+    background-color: blue;
+}
+
+.positive {
+    display: inline-block;
+    padding: .25em 0;
+    background: #03fca5;
+    color: #000000;
+}
+
+.negative {
+    display: inline-block;
+    padding: .25em 0;
+    background: #e66d57;
+    color: #000000;
+}
+
 .row {
     display: flex;
     justify-content: space-between;
@@ -53,16 +72,3 @@ textarea {
 
 
 
-.good{
-    display: inline-block;
-    padding: .25em 0;
-    background: #03fca5;
-    color: #000000;
-}
-
-.not-good{
-    display: inline-block;
-    padding: .25em 0;
-    background: #e66d57;
-    color: #000000;
-}
