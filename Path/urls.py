@@ -19,7 +19,9 @@ from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
 from django.conf.urls import include
-
+from django.urls import re_path
+from django.views.static import serve
+from . import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     #import the urls from app.urls
@@ -27,3 +29,7 @@ urlpatterns = [
 
 
 ]
+
+urlpatterns += (
+re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+)
