@@ -11,10 +11,20 @@ body {
 }
 
 .container {
-
-    width: 90vw;
+    font-size: 25px;
     height: 90vh;
     padding: 4rem;
 
 }
+.line {
+    margin-bottom: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+
+.submituser {
+    margin-top: 500px;
+    font-size: 25px;
+}
+  
 

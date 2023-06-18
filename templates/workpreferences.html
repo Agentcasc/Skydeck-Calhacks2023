@@ -3,27 +3,29 @@
 {% block content %}
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{%  static 'styles/workpreferences.css' %}">
 </head>
 <h1>User Profile</h1>
+<br>
 <form method="post" action="{% url 'save-profile-data' %}">
     {% csrf_token %}
 
     <div class="user-info">
         <label for="extracurriculars">Extracurriculars:</label>
         <textarea id="extracurriculars" name="extracurriculars"></textarea>
-        <br>
+        <!-- <br> -->
         <label for="introverted_extroverted">Introverted/Extroverted:</label>
         <input type="text" id="introverted_extroverted" name="introverted_extroverted">
-        <br>
+        <!-- <br> -->
         <label for="interests">Interests:</label>
         <textarea id="interests" name="interests"></textarea>
-        <br>
+        <!-- <br> -->
         <label for="who_you_are">Who You Are and What You Do:</label>
         <textarea id="who_you_are" name="who_you_are"></textarea>
-        <br>
+        <!-- <br> -->
         <label for="county_in_california">County in California:</label>
         <input type="text" id="county_in_california" name="county_in_california">
-        <br>
+        <!-- <br> -->
         <label for="future_career_aspirations">Future Career Aspirations:</label>
         <textarea id="future_career_aspirations" name="future_career_aspirations"></textarea>
         <br>
