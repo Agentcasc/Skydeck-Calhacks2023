@@ -134,4 +134,6 @@ STATICFILES_FINDERS = (
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = '/login/'
+# settings.py
+LOGIN_REDIRECT_URL = '/home/'
 

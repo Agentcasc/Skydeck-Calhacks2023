@@ -14,18 +14,21 @@ def home(request):
     return render(request, 'home.html')
 
 
-def login(request):
+def login_view(request):
+    error_message = None  # Assign a default value to error_message
+
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
+
         if user is not None:
             login(request, user)
             return redirect('home')
         else:
-            # Authentication failed, show an error message or handle it as needed
-            pass
-    return render(request, 'login.html')
+            error_message = 'Invalid username or password. Please try again.'
+
+    return render(request, 'login.html', {'error_message': error_message})
 
 
 def profile(request):
