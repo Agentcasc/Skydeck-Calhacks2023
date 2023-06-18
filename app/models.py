@@ -39,6 +39,8 @@ class StudentProfile(models.Model):
     comfortable_with_technology = models.BooleanField(default=False)
     open_to_learning = models.BooleanField(default=False)
 
+    chosenCareerField = models.CharField(max_length=30, blank=True)
+
     def __str__(self):
         return self.user.username
 

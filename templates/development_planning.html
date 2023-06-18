@@ -7,7 +7,9 @@
     <meta charset="UTF-8">
     <title>Dev Plan</title>
     <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="path/to/jquery.cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 </head>
 
 <body>
@@ -20,7 +22,15 @@
     <input type="submit" value="Get Career Path Suggestion">
 
 </form>
-{% if career1 %}
+{% if isChosen %}
+
+<div class="chosenCareerField">
+
+    Chosen Career Field: {{ chosen }}
+
+</div>
+
+{% elif career1 %}
 <div class="careerchoice" name="career1">
     {{ career1 }}
     <button class="add-to-cart">
@@ -72,5 +82,52 @@
 
 
 </body>
+
+<script>
+    $(document).ready(function() {
+    // Add to cart button click
+    $(".add-to-cart").click(function() {
+        var careerName = $(this)
+    .parent()
+    .text()
+    .trim()
+    .split('.')[1]
+    .trim()
+    .split('-')[0]
+    .trim()
+
+
+
+        console.log(careerName);
+
+        var data = {
+            career: careerName
+        };
+
+
+
+
+        // Include the CSRF token in the request headers
+        $.ajaxSetup({
+            headers: {
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/addCareerPath/", // Update with the correct URL
+            data: data,
+            success: function() {
+
+                //development_planning
+                window.location.href = "/development_planning/";
+            }
+        });
+    });
+});
+
+</script>
+
 </html>
 {% endblock %}

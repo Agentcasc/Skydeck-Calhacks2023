@@ -57,11 +57,27 @@ def workpreferences(request):
 
 
 def development_planning(request):
-    context = {
-        "career1": "",
-        "career2": "",
-        "career3": "",
-        "career4": "",
-        "career5": "",
-    }
-    return render(request, 'development_planning.html')
+    if request.user.studentprofile.chosenCareerField != None or request.user.studentprofile.chosenCareerField != "":
+        chosen = request.user.studentprofile.chosenCareerField
+        print(chosen)
+        context = {
+            "career1": "",
+            "career2": "",
+            "career3": "",
+            "career4": "",
+            "career5": "",
+            "chosen": chosen,
+            "isChosen": True,
+        }
+        print(context)
+
+    else:
+        context = {
+            "career1": "",
+            "career2": "",
+            "career3": "",
+            "career4": "",
+            "career5": "",
+            "chosenField": ""
+        }
+    return render(request, 'development_planning.html',context)

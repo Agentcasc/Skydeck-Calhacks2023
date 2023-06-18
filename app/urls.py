@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 # from .Engines.responses import *
 from .CRUD import update
-from .Engine.Launchpad.CareerPath import response
+from .Engine.Launchpad.CareerPath import response, addCareerPath
 
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path('workpreferences/', views.workpreferences, name='workpreferences'),
     path('development_planning/', views.development_planning, name='development_planning'),
     path('career_path_suggestion/', response, name='career_path_suggestion'),
+    path('addCareerPath/', addCareerPath, name='addCareerPath'),
 ]

@@ -32,7 +32,7 @@ def response(request):
         comfortable_with_technology = request.user.studentprofile.comfortable_with_technology
         open_to_learning = request.user.studentprofile.open_to_learning
 
-        prompt = f"Given a student profile where the grade level is 9-12, find a suitable career path based on the following responses:\n\nExtracurriculars: {extracurriculars}\n\nIntroverted extroverted: {introverted_extroverted}\n\nInterests: {interests}\n\nWho you are: {who_you_are}\n\nCounty in California: {county_in_california}\n\nFuture career aspirations: {future_career_aspirations}\n\nWork indoors: {work_indoors}\n\nWork outdoors: {work_outdoors}\n\nFast paced environment: {fast_paced_environment}\n\nRelaxed environment: {relaxed_environment}\n\nCollaborative team: {collaborative_team}\n\nIndependent work: {independent_work}\n\nPhysically demanding work: {physically_demanding_work}\n\nWilling to travel: {willing_to_travel}\n\nFlexible work hours: {flexible_work_hours}\n\nStructured environment: {structured_environment}\n\nCasual environment: {casual_environment}\n\nCompetitive atmosphere: {competitive_atmosphere}\n\nSupportive atmosphere: {supportive_atmosphere}\n\nJob variety: {job_variety}\n\nRoutine oriented: {routine_oriented}\n\nCustomer interaction: {customer_interaction}\n\nWork life balance: {work_life_balance}\n\nComfortable with technology: {comfortable_with_technology}\n\nOpen to learning: {open_to_learning}\n\nGive me 5 careers, along with their descriptions that suit the given student profile --> IN A NUMBERED FORMAT WHERE EACH CAREER IS SEPARATED BY NEWLINES\n\n"
+        prompt = f"Given a student profile where the grade level is 9-12, find a suitable career path based on the following responses:\n\nExtracurriculars: {extracurriculars}\n\nIntroverted extroverted: {introverted_extroverted}\n\nInterests: {interests}\n\nWho you are: {who_you_are}\n\nCounty in California: {county_in_california}\n\nFuture career aspirations: {future_career_aspirations}\n\nWork indoors: {work_indoors}\n\nWork outdoors: {work_outdoors}\n\nFast paced environment: {fast_paced_environment}\n\nRelaxed environment: {relaxed_environment}\n\nCollaborative team: {collaborative_team}\n\nIndependent work: {independent_work}\n\nPhysically demanding work: {physically_demanding_work}\n\nWilling to travel: {willing_to_travel}\n\nFlexible work hours: {flexible_work_hours}\n\nStructured environment: {structured_environment}\n\nCasual environment: {casual_environment}\n\nCompetitive atmosphere: {competitive_atmosphere}\n\nSupportive atmosphere: {supportive_atmosphere}\n\nJob variety: {job_variety}\n\nRoutine oriented: {routine_oriented}\n\nCustomer interaction: {customer_interaction}\n\nWork life balance: {work_life_balance}\n\nComfortable with technology: {comfortable_with_technology}\n\nOpen to learning: {open_to_learning}\n\nGive me 5 careers, along with their descriptions that suit the given student profile --> IN A NUMBERED FORMAT WHERE EACH CAREER IS SEPARATED BY NEWLINES LIKE \n NUM. CAREER - CAREER DESCRIPTION"
         temperature = 1
         max_tokens = 500
         top_p = 1
@@ -62,3 +62,15 @@ def response(request):
 
 
     return render(request, 'development_planning.html', context)
+
+
+def addCareerPath(request):
+
+    career = request.POST.get('career')
+
+    student_profile = request.user.studentprofile
+
+    student_profile.chosenCareerField = career
+    student_profile.save()
+
+    return HttpResponse("Success")
