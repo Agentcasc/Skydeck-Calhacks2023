@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'PathAI'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FD0BB9F2C3344A97AED7BF3416835A4D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_175D2004161342E99255D257F1152C61 }}
