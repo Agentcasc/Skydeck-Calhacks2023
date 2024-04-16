@@ -4,7 +4,7 @@
 #
 #
 # # Initialize Pinecone
-# pinecone.init(api_key="e26c7676-bc1f-42e3-8071-5d14948de64f", environment="us-west1-gcp-free")
+# pinecone.init(api_key="", environment="us-west1-gcp-free")
 #
 # # Specify your index name and dimension
 #
@@ -36,7 +36,7 @@
 # ])
 #
 # def retrieve_all_vectors(index_name):
-#     pinecone.init(api_key="e26c7676-bc1f-42e3-8071-5d14948de64f", environment="us-west1-gcp-free")
+#     pinecone.init(api_key="", environment="us-west1-gcp-free")
 #
 #     index_info = pinecone.list_indexes()
 #
